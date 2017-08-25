@@ -14,5 +14,5 @@ Sistema de gerenciamento de Clinica Medica - MedLim
 
 Objetivo - Agilizar e facilitar a rotina de uma clinica medica e garantir a organização e segurança das informações.
 
-Requisitos - Cadastramento de proficionais, pacientes e especialidades medicas, junto com o agendamento de consultas e exames.
+Requisitos - Cadastramento de profissionais, pacientes e especialidades medicas, junto com o agendamento de consultas e exames.
 
