@@ -1,4 +1,4 @@
-# POO2
+# MedLim
 Disciplina Programação Orientada a Objetos 2 - FT/UNICAMP
 
 Davi Lopes Mezencio 169759 - GitHub: Davilopesm;
