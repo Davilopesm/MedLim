@@ -22,6 +22,7 @@ Requisitos - Cadastramento de profissionais, pacientes e especialidades medicas,
     <li> Profissional </li>
     <li> ProfissionalMedico </li>
     <li> ProfissionalTecnico </li>
+    <li> Atendimento </li>
     <li> Consulta </li>
     <li> Exame </li>
     <li> Historico Paciente</li>  
