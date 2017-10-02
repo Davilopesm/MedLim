@@ -8,6 +8,10 @@ package view;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
+import model.*;
+import control.*;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -61,6 +65,12 @@ public class Login extends javax.swing.JFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
             }
         });
 
@@ -136,14 +146,22 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       TelaInicial tela = new TelaInicial();
-       tela.setVisible(true);
-       this.dispose();            
+        String x = new String(jPasswordField1.getPassword());
+        Control.fazerLogin(jTextField1.getText(), x);
+        jTextField1.setText("");   
+        jPasswordField1.setText("");          
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+           
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
+        
     /**
      * @param args the command line arguments
      */
+    
+    private static Login loginTela;
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -171,11 +189,27 @@ public class Login extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
-                new Login().setVisible(true);
+              loginTela =  new Login();
+              loginTela .setVisible(true);
             }
         });
     }
+    
+    public static void abrirTela(){
+       TelaInicial tela = new TelaInicial();
+       tela.setVisible(true);
+       loginTela.dispose();
+    }
+
+    public static void erroLogin(){
+        JOptionPane optionPane = new JOptionPane("Login ou Senha Invalidos");
+        JDialog dialog = optionPane.createDialog("Erro!");
+        dialog.setAlwaysOnTop(loginTela.isAlwaysOnTopSupported());
+        dialog.setVisible(true);
+    }
+        
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
