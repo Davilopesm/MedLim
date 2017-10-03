@@ -198,6 +198,10 @@ public class Login extends javax.swing.JFrame {
     }
     
     public static void abrirTela(){
+       JOptionPane optionPane = new JOptionPane("Bem Vindo");
+       JDialog dialog = optionPane.createDialog("Logado com Sucesso!");
+       dialog.setAlwaysOnTop(loginTela.isAlwaysOnTopSupported());
+       dialog.setVisible(true);
        TelaInicial tela = new TelaInicial();
        tela.setVisible(true);
        loginTela.dispose();
