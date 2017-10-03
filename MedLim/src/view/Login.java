@@ -10,6 +10,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import model.*;
 import control.*;
+import java.awt.event.KeyEvent;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
@@ -71,6 +72,11 @@ public class Login extends javax.swing.JFrame {
         jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordField1ActionPerformed(evt);
+            }
+        });
+        jPasswordField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPasswordField1KeyPressed(evt);
             }
         });
 
@@ -155,6 +161,16 @@ public class Login extends javax.swing.JFrame {
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
            
     }//GEN-LAST:event_jPasswordField1ActionPerformed
+
+    private void jPasswordField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1KeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+           String x = new String(jPasswordField1.getPassword());
+           Control.fazerLogin(jTextField1.getText(), x);
+           jTextField1.setText("");   
+           jPasswordField1.setText("");          
+        }
+        
+    }//GEN-LAST:event_jPasswordField1KeyPressed
         
     /**
      * @param args the command line arguments
@@ -198,6 +214,10 @@ public class Login extends javax.swing.JFrame {
     }
     
     public static void abrirTela(){
+       JOptionPane optionPane = new JOptionPane("Bem Vindo");
+       JDialog dialog = optionPane.createDialog("Logado com Sucesso!");
+       dialog.setAlwaysOnTop(loginTela.isAlwaysOnTopSupported());
+       dialog.setVisible(true);
        TelaInicial tela = new TelaInicial();
        tela.setVisible(true);
        loginTela.dispose();
