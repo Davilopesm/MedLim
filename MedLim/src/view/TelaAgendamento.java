@@ -20,9 +20,9 @@ public class TelaAgendamento extends javax.swing.JFrame {
      */
     public TelaAgendamento() {
         initComponents();
-        getContentPane().setBackground(Color.white);
-        Image imagem = Toolkit.getDefaultToolkit().getImage(getClass().getResource("logo.jpg"));
-        setIconImage(imagem);
+        getContentPane().setBackground(Color.white);//definir background em branco
+        Image imagem = Toolkit.getDefaultToolkit().getImage(getClass().getResource("logo.jpg"));//definir imagem de icone  
+        setIconImage(imagem);//imagem do icone
     }
 
     /**

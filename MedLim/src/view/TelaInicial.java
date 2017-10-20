@@ -5,9 +5,11 @@
  */
 package view;
 
+import control.Control;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 
 /**
  *
@@ -45,7 +47,6 @@ public class TelaInicial extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela Inicial\n");
-        setPreferredSize(new java.awt.Dimension(595, 580));
 
         jButton1.setText("Paciente");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -123,7 +124,7 @@ public class TelaInicial extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         pack();
@@ -133,19 +134,19 @@ public class TelaInicial extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        TelaPaciente telaPaciente = new TelaPaciente();
        telaPaciente.setVisible(true);
-       this.dispose(); 
+       this.dispose(); //fechar esse form e abrir o TelaPaciente
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        TelaProfissional tela = new TelaProfissional();
        tela.setVisible(true);
-       this.dispose();
+       this.dispose();//fechar esse form e abrir o TelaProfissional
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
        TelaAgendamento tela = new TelaAgendamento();
        tela.setVisible(true);
-       this.dispose();
+       this.dispose();//fechar esse form e abrir o TelaAgendamento
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

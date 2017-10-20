@@ -26,9 +26,9 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
-        getContentPane().setBackground(Color.white);
-        Image imagem = Toolkit.getDefaultToolkit().getImage(getClass().getResource("logo.jpg"));
-        setIconImage(imagem);
+        getContentPane().setBackground(Color.white);//definir background em white
+        Image imagem = Toolkit.getDefaultToolkit().getImage(getClass().getResource("logo.jpg"));//definir imagem de logo
+        setIconImage(imagem);//imagem de logo
      }
 
     /**
@@ -106,8 +106,8 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addGap(32, 32, 32)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(155, 155, 155))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(104, 104, 104))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButton1)
                         .addGap(258, 258, 258))
@@ -152,10 +152,21 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String x = new String(jPasswordField1.getPassword());
-        Control.fazerLogin(jTextField1.getText(), x);
-        jTextField1.setText("");   
-        jPasswordField1.setText("");          
+        String x = new String(jPasswordField1.getPassword());//PEGAR DADOS DO PASSWORD FIELD E SALVAR EM X
+        if(Control.fazerLogin(jTextField1.getText(), x) == true){//CHAMARR A FUNÇÃO DO CONTROL PASSANDO OS DADOS DOS CAMPOS LOGIN E SENHA, SE FOR TRUE FAZ O LOGIN E ABRE O OUTRO FORM
+            JOptionPane optionPane = new JOptionPane("Bem Vindo" + jTextField1.getText());
+            JDialog dialog = optionPane.createDialog("Logado com Sucesso!");
+            dialog.setAlwaysOnTop(loginTela.isAlwaysOnTopSupported());
+            dialog.setVisible(true);
+            TelaInicial tela = new TelaInicial();
+            tela.setVisible(true);
+            loginTela.dispose();//fecha esse form e abre o outro
+        }else{//se dados passados para a função retornarem false
+            JOptionPane optionPane = new JOptionPane("Login ou Senha Invalidos");
+            JDialog dialog = optionPane.createDialog("Erro!");
+            dialog.setAlwaysOnTop(loginTela.isAlwaysOnTopSupported());
+            dialog.setVisible(true);
+        }         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
@@ -163,11 +174,23 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     private void jPasswordField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1KeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){//pegar dados se tecla de enter for clicada no campo de password
            String x = new String(jPasswordField1.getPassword());
-           Control.fazerLogin(jTextField1.getText(), x);
-           jTextField1.setText("");   
-           jPasswordField1.setText("");          
+           Control.fazerLogin(jTextField1.getText(), x);//chamar a função de fazer login do control passando os dados de login e senha
+           if(Control.fazerLogin(jTextField1.getText(), x) == true){
+            JOptionPane optionPane = new JOptionPane("Bem Vindo " + jTextField1.getText());
+            JDialog dialog = optionPane.createDialog("Logado com Sucesso!");
+            dialog.setAlwaysOnTop(loginTela.isAlwaysOnTopSupported());
+            dialog.setVisible(true);
+            TelaInicial tela = new TelaInicial();
+            tela.setVisible(true);
+            loginTela.dispose();//fecha esse form e abre o outro de TelaInicial
+            }else{//se dados passados para a função retornarem false
+                JOptionPane optionPane = new JOptionPane("Login ou Senha Invalidos");
+                JDialog dialog = optionPane.createDialog("Erro!");
+                dialog.setAlwaysOnTop(loginTela.isAlwaysOnTopSupported());
+                dialog.setVisible(true);//mensagem de erro, por login ou senha invalidos
+            }                   
         }
         
     }//GEN-LAST:event_jPasswordField1KeyPressed
@@ -213,22 +236,6 @@ public class Login extends javax.swing.JFrame {
         });
     }
     
-    public static void abrirTela(){
-       JOptionPane optionPane = new JOptionPane("Bem Vindo");
-       JDialog dialog = optionPane.createDialog("Logado com Sucesso!");
-       dialog.setAlwaysOnTop(loginTela.isAlwaysOnTopSupported());
-       dialog.setVisible(true);
-       TelaInicial tela = new TelaInicial();
-       tela.setVisible(true);
-       loginTela.dispose();
-    }
-
-    public static void erroLogin(){
-        JOptionPane optionPane = new JOptionPane("Login ou Senha Invalidos");
-        JDialog dialog = optionPane.createDialog("Erro!");
-        dialog.setAlwaysOnTop(loginTela.isAlwaysOnTopSupported());
-        dialog.setVisible(true);
-    }
         
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

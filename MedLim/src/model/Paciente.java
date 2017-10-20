@@ -3,17 +3,21 @@ package model;
 
 public class Paciente {
     private String nome;
-    private float CPF;
-    private float RG;
-    private String endereço;
+    private long CPF;
+    private long RG;
+    private String endereco;
     private float telefone;
 
-    public Paciente(String nome, float CPF, float RG, String endereço, float telefone) {
+    public Paciente(String nome, long CPF, long RG, String endereco, float telefone) {
         this.nome = nome;
         this.CPF = CPF;
         this.RG = RG;
-        this.endereço = endereço;
+        this.endereco = endereco;
         this.telefone = telefone;
+    }
+
+    Paciente() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getNome() {
@@ -24,28 +28,28 @@ public class Paciente {
         this.nome = nome;
     }
 
-    public float getCPF() {
+    public long getCPF() {
         return CPF;
     }
 
-    public void setCPF(float CPF) {
+    public void setCPF(long CPF) {
         this.CPF = CPF;
     }
 
-    public float getRG() {
+    public long getRG() {
         return RG;
     }
 
-    public void setRG(float RG) {
+    public void setRG(long RG) {
         this.RG = RG;
     }
 
-    public String getEndereço() {
-        return endereço;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setEndereço(String endereço) {
-        this.endereço = endereço;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
     public float getTelefone() {
@@ -54,9 +58,9 @@ public class Paciente {
 
     public void setTelefone(float telefone) {
         this.telefone = telefone;
-    }   
-    
-       
-    
+    }
+
+
+
     
 }
