@@ -3,7 +3,7 @@ package medlim;
 
 /**
  *
- * @author FabioPrado
+ * @author Dell
  */
 public class Profissional {
     public String nome_prof;

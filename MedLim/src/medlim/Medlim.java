@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Scanner;
 /**
  *
- * @author FabioPrado
+ * @author Dell
  */
 public class Medlim {
 

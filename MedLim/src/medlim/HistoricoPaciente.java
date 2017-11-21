@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author FabioPrado
+ * @author Dell
  */
 public class HistoricoPaciente {
     public String cpf_pac;
@@ -33,7 +33,7 @@ public class HistoricoPaciente {
     
     public void cadastrar_historico(String cpf, String historico) throws IOException{
         /**criando arquivo onde será salvo o cadastro */
-        FileWriter fw = new FileWriter("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\pacienteHistorico.txt", true);
+        FileWriter fw = new FileWriter("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\pacienteHistorico.txt", true);
         try (PrintWriter salvarDados = new PrintWriter(fw)) {
            
             /**gravando dados recebidos do pacote view no arquivo selecionado anteriormente */
@@ -47,7 +47,7 @@ public class HistoricoPaciente {
     
     public String consultar_historico(String cpf) throws FileNotFoundException, IOException{
         /**abrindo arquivo para consulta do seu conteúdo */
-        FileReader fr = new FileReader("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\pacienteHistorico.txt");
+        FileReader fr = new FileReader("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\pacienteHistorico.txt");
         BufferedReader lerDados = new BufferedReader(fr);
                 
         String linha = ""; 
@@ -70,7 +70,7 @@ public class HistoricoPaciente {
     
      public boolean consultarExistencia_pac2(String cpf) throws FileNotFoundException, IOException{
         /**abrindo arquivo novamente para consulta */
-        FileReader fr = new FileReader("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\paciente.txt");
+        FileReader fr = new FileReader("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\paciente.txt");
         BufferedReader lerDados = new BufferedReader(fr);
         
         String linha = ""; 
@@ -88,7 +88,7 @@ public class HistoricoPaciente {
     
      public boolean consultarExistencia_pac(String cpf) throws FileNotFoundException, IOException{
         /**abrindo arquivo novamente para consulta */
-        FileReader fr = new FileReader("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\pacienteHistorico.txt");
+        FileReader fr = new FileReader("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\pacienteHistorico.txt");
         BufferedReader lerDados = new BufferedReader(fr);
         
         String linha = ""; 
@@ -107,7 +107,7 @@ public class HistoricoPaciente {
     public void remover_historico(String cpf) throws FileNotFoundException, IOException{
         ArrayList<String> salvarDados;
         /**abrindo arquivo selecionado para leitura */
-        try (FileReader fr = new FileReader("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\pacienteHistorico.txt");
+        try (FileReader fr = new FileReader("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\pacienteHistorico.txt");
             BufferedReader lerDados = new BufferedReader(fr)) {
             String linha ="";
             salvarDados = new ArrayList();
@@ -122,11 +122,11 @@ public class HistoricoPaciente {
         }
         
         /**criando arquivo com a propriedade true para limpar seu conteúdo */
-        FileWriter fw2 = new FileWriter("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\pacienteHistorico.txt" , true);
+        FileWriter fw2 = new FileWriter("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\pacienteHistorico.txt" , true);
         fw2.close();     
         
         /**criando o arquivo novamente e passando a ArrayList com os dados para o arquivo */
-        FileWriter fw = new FileWriter("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\pacienteHistorico.txt");
+        FileWriter fw = new FileWriter("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\pacienteHistorico.txt");
         BufferedWriter salvar = new BufferedWriter(fw);  
         
         

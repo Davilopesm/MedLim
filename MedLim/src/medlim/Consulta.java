@@ -17,7 +17,7 @@ import java.util.Arrays;
 
 /**
  *
- * @author FabioPrado
+ * @author Dell
  */
 public class Consulta extends Atendimento{
     public String cpf_prof;
@@ -38,7 +38,7 @@ public class Consulta extends Atendimento{
     
     public void cadastrarAgendamento(String cpf_pac, String cpf_prof, String data, String horario) throws IOException{
         /**criando arquivo */
-        try (FileWriter fw = new FileWriter("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoConsulta.txt", true)) {
+        try (FileWriter fw = new FileWriter("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoConsulta.txt", true)) {
             PrintWriter salvarDados = new PrintWriter(fw);
             
             /**salvando variáveis no arquivo e separando-as pelo caracter/ */
@@ -60,7 +60,7 @@ public class Consulta extends Atendimento{
     
      public ArrayList<String> consultarAgendamento(String cpf) throws FileNotFoundException, IOException{
          /**abrindo arquivo para leitura do seu conteúdo */
-        FileReader fr = new FileReader("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoConsulta.txt");
+        FileReader fr = new FileReader("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoConsulta.txt");
         BufferedReader lerDados = new BufferedReader(fr);
         
         String limite = "/"; 
@@ -84,7 +84,7 @@ public class Consulta extends Atendimento{
     
     public void excluirAgendamento(String cpf_pac, String cpf_prof, String  data, String horario) throws FileNotFoundException, IOException{
         /**abrindo arquivo para leitura do seu conteúdo */
-        FileReader fr = new FileReader("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoConsulta.txt");
+        FileReader fr = new FileReader("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoConsulta.txt");
         BufferedReader lerDados = new BufferedReader(fr);
         
         String linha ="";
@@ -105,11 +105,11 @@ public class Consulta extends Atendimento{
         fr.close();
        
         /**criando arquivo com a propriedade true para limpar seu conteúdo */        
-        FileWriter fw2 = new FileWriter("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoConsulta.txt" , true);
+        FileWriter fw2 = new FileWriter("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoConsulta.txt" , true);
         fw2.close();     
         
         /**cirando arquivo novamente e salvando a ArrayList no seu conteúdo */
-        FileWriter fw = new FileWriter("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoConsulta.txt");
+        FileWriter fw = new FileWriter("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoConsulta.txt");
         BufferedWriter salvar = new BufferedWriter(fw);  
         
         
@@ -126,7 +126,7 @@ public class Consulta extends Atendimento{
     
      public boolean consultarExistencia_pac(String cpf) throws FileNotFoundException, IOException{
         /**abrindo arquivo para consulta */
-        FileReader fr = new FileReader("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\paciente.txt");
+        FileReader fr = new FileReader("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\paciente.txt");
         BufferedReader lerDados = new BufferedReader(fr);
         
         String linha = ""; 
@@ -146,7 +146,7 @@ public class Consulta extends Atendimento{
      
      public boolean consultarExistenciaConsulta(String cpf, String data, String horario) throws FileNotFoundException, IOException{
         /**abrindo arquivo para leitura */
-        FileReader fr = new FileReader("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoConsulta.txt");
+        FileReader fr = new FileReader("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoConsulta.txt");
         BufferedReader lerDados = new BufferedReader(fr);
         
         String linha = ""; 
@@ -164,7 +164,7 @@ public class Consulta extends Atendimento{
      
      public boolean consultarExistenciaConsulta2(String cpf, String data, String horario) throws FileNotFoundException, IOException{
         /**abrindo arquivo para leitura */
-        FileReader fr = new FileReader("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoConsulta.txt");
+        FileReader fr = new FileReader("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoConsulta.txt");
         BufferedReader lerDados = new BufferedReader(fr);
         
         String linha = ""; 
@@ -182,7 +182,7 @@ public class Consulta extends Atendimento{
      
      public boolean consultarExistenciaConsulta3(String cpf_pac, String cpf_prof, String data, String horario) throws FileNotFoundException, IOException{
         /**abrindo arquivo para leitura */
-        FileReader fr = new FileReader("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoConsulta.txt");
+        FileReader fr = new FileReader("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoConsulta.txt");
         BufferedReader lerDados = new BufferedReader(fr);
         
         String linha = ""; 
@@ -202,7 +202,7 @@ public class Consulta extends Atendimento{
      
      public boolean consultarExistencia_prof(String cpf) throws FileNotFoundException, IOException{
         /**abrindo arquivo para leitura */
-        FileReader fr = new FileReader("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\profissionalMedico.txt");
+        FileReader fr = new FileReader("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\profissionalMedico.txt");
         BufferedReader lerDados = new BufferedReader(fr);
         
         String linha = ""; 

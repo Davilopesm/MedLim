@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author FabioPrado
+ * @author Dell
  */
 public class Tecnico extends Profissional{
     public String funçao;
@@ -33,7 +33,7 @@ public class Tecnico extends Profissional{
     
       public void cadastrar_prof(String nome, String cpf, String rg, String endereço, String telefone, String cargo, String funçao) throws IOException{
             /**arquivo é criado e pronto para receber dados */
-            FileWriter fw = new FileWriter("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\profissionalTecnico.txt", true);
+            FileWriter fw = new FileWriter("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\profissionalTecnico.txt", true);
             PrintWriter salvarDados = new PrintWriter(fw);
            
             /**função salva os dados recebidos no arquivo e os separa através do caracter / */
@@ -60,7 +60,7 @@ public class Tecnico extends Profissional{
     
     public String[] consultar_prof(String cpf) throws FileNotFoundException, IOException{
         /**arquivo é aberto para leitura */
-        FileReader fr = new FileReader("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\profissionalTecnico.txt");
+        FileReader fr = new FileReader("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\profissionalTecnico.txt");
         BufferedReader lerDados = new BufferedReader(fr);
         
         String limite = "/"; 
@@ -91,7 +91,7 @@ public class Tecnico extends Profissional{
     
     public boolean consultarExistencia_prof(String cpf) throws FileNotFoundException, IOException{
         /**abrindo arquivo para leitura */
-        FileReader fr = new FileReader("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\profissionalTecnico.txt");
+        FileReader fr = new FileReader("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\profissionalTecnico.txt");
         BufferedReader lerDados = new BufferedReader(fr);
         
         String linha = ""; 
@@ -110,7 +110,7 @@ public class Tecnico extends Profissional{
         ArrayList<String> salvarDados;
         
         /**arquivo é aberto para consulta novamente */
-        try (FileReader fr = new FileReader("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\profissionalTecnico.txt");
+        try (FileReader fr = new FileReader("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\profissionalTecnico.txt");
             BufferedReader lerDados = new BufferedReader(fr)) {
             String linha ="";
             salvarDados = new ArrayList();
@@ -125,11 +125,11 @@ public class Tecnico extends Profissional{
         }
         
         /**arquivo é criado com a propriedade true para que ele tenha seu conteudo apagado */
-        FileWriter fw2 = new FileWriter("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\profissionalTecnico.txt" , true);
+        FileWriter fw2 = new FileWriter("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\profissionalTecnico.txt" , true);
         fw2.close();     
         
         /**arquivo é criado novamente e receberá o ArrayList com o conteúdo necessário */
-        FileWriter fw = new FileWriter("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\profissionalTecnico.txt");
+        FileWriter fw = new FileWriter("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\profissionalTecnico.txt");
         BufferedWriter salvar = new BufferedWriter(fw);  
         
         

@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author FabioPrado
+ * @author Dell
  */
 public class Exame extends Atendimento{
     public String parecer_exame;
@@ -40,7 +40,7 @@ public class Exame extends Atendimento{
     
     public void cadastrarAgendamento(String cpf, String data, String horario) throws IOException{
         /**criando arquivo para salvar dados */
-        FileWriter fw = new FileWriter("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoExame.txt", true);
+        FileWriter fw = new FileWriter("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoExame.txt", true);
         PrintWriter salvarDados = new PrintWriter(fw);
               
         /**salvando dados e separando as variavéis recebidas através do caracter / */
@@ -59,7 +59,7 @@ public class Exame extends Atendimento{
     
     public ArrayList<String> consultarAgendamento(String cpf) throws FileNotFoundException, IOException{
         /**abrindo arquivo selecionado para ler seu conteúdo */
-        FileReader fr = new FileReader("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoExame.txt");
+        FileReader fr = new FileReader("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoExame.txt");
         BufferedReader lerDados = new BufferedReader(fr);
         
         String limite = "/"; 
@@ -87,7 +87,7 @@ public class Exame extends Atendimento{
     
     public boolean consultarExistencia_pac(String cpf) throws FileNotFoundException, IOException{
         /**abrindo arquivo para consultar existência do cpf solicitado */
-        FileReader fr = new FileReader("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\paciente.txt");
+        FileReader fr = new FileReader("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\paciente.txt");
         BufferedReader lerDados = new BufferedReader(fr);
         
         String linha = ""; 
@@ -105,7 +105,7 @@ public class Exame extends Atendimento{
     
     public boolean consultarExistenciaExame(String cpf, String data, String horario) throws FileNotFoundException, IOException{
         /**abrindo arquivo para leitura */
-        FileReader fr = new FileReader("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoExame.txt");
+        FileReader fr = new FileReader("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoExame.txt");
         BufferedReader lerDados = new BufferedReader(fr);
         
         String linha = ""; 
@@ -127,7 +127,7 @@ public class Exame extends Atendimento{
     
     public void excluirAgendamento(String cpf, String data, String horario) throws FileNotFoundException, IOException{
         /**abrindo arquivo para leitura */
-        FileReader fr = new FileReader("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoExame.txt");
+        FileReader fr = new FileReader("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoExame.txt");
         BufferedReader lerDados = new BufferedReader(fr);
                
         String linha ="";
@@ -148,11 +148,11 @@ public class Exame extends Atendimento{
            fr.close();
         
         /**criando arquivo com a propriedade true para limpar seu conteúdo */
-        FileWriter fw2 = new FileWriter("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoExame.txt" , true);
+        FileWriter fw2 = new FileWriter("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoExame.txt" , true);
         fw2.close();     
         
         /**criando arquivo e salvando a ArrayList no seu conteúdo */
-        FileWriter fw = new FileWriter("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoExame.txt");
+        FileWriter fw = new FileWriter("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\agendamentoExame.txt");
         BufferedWriter salvar = new BufferedWriter(fw);  
         
         

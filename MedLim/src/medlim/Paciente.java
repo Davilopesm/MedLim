@@ -9,7 +9,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 /**
  *
- * @author FabioPrado
+ * @author Dell
  */
 public class Paciente {
     public String nome_pac;
@@ -76,7 +76,7 @@ public class Paciente {
     public void cadastrar_pac(String nome, String cpf, String rg, String endereço, String telefone) throws IOException{
        
         /**função para criar arquivo indicado e editá-lo */
-        FileWriter fw = new FileWriter("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\paciente.txt", true);
+        FileWriter fw = new FileWriter("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\paciente.txt", true);
         PrintWriter salvarDados = new PrintWriter(fw);
         
         //**salvando dados no arquivo e usando o / como delimitador de cada variavael para consulta futuramente nos TextField*/
@@ -101,7 +101,7 @@ public class Paciente {
     public  String[] consultar_pac(String cpf) throws FileNotFoundException, IOException{
         
         /**função abrindo arquivo com conteudo salvo e permitindo sua leitura*/
-        FileReader fr = new FileReader("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\paciente.txt");
+        FileReader fr = new FileReader("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\paciente.txt");
         BufferedReader lerDados = new BufferedReader(fr);
         
         /**função salva linha desejada no vetor dados e cada posição é dividado através do limite, que separa cada variavel*/
@@ -132,7 +132,7 @@ public class Paciente {
     
     public boolean consultarExistencia_pac(String cpf) throws FileNotFoundException, IOException{
         /**função abre arquivo para leitura novamente para verificar se o paciente já existe no arquivo */
-        FileReader fr = new FileReader("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\paciente.txt");
+        FileReader fr = new FileReader("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\paciente.txt");
         BufferedReader lerDados = new BufferedReader(fr);
         
         String linha = ""; 
@@ -150,7 +150,7 @@ public class Paciente {
        
     public void remover_pac(String cpf) throws FileNotFoundException, IOException{
          /**função abrindo arquivo com conteudo salvo e permitindo sua leitura*/
-        FileReader fr = new FileReader("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\paciente.txt");
+        FileReader fr = new FileReader("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\paciente.txt");
         BufferedReader lerDados = new BufferedReader(fr);
         
         /**linhas do arquivo são percorridas e todas as que não devem ser excluídas são adicionadas na ArrayList definida abaixo*/
@@ -168,11 +168,11 @@ public class Paciente {
            fr.close();
         
         /**novo arquivo é criado com a propriedado true, para que todo o arquivo seje limpo */
-        FileWriter fw2 = new FileWriter("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\paciente.txt" , true);
+        FileWriter fw2 = new FileWriter("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\paciente.txt" , true);
         fw2.close();     
         
         /**arquivo é reaberto limpo e este por sua vez receberá os dados contidos na ArrayList */
-        FileWriter fw = new FileWriter("C:\\Users\\FabioPrado\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\paciente.txt");
+        FileWriter fw = new FileWriter("C:\\Users\\Dell\\Documents\\NetBeansProjects\\medlim\\src\\medlim\\paciente.txt");
         BufferedWriter salvar = new BufferedWriter(fw);  
         
         
